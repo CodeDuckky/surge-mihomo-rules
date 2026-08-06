@@ -1,0 +1,8 @@
+#!name=SimHub VoWiFi - Giffgaff
+#!desc=Surge local module for Wi-Fi Calling / ePDG. PLMN: 23410. Policy: UK-Snell. The policy must already exist in your main profile unless it is DIRECT.
+#!author=SimHub
+
+[Rule]
+DOMAIN-SUFFIX,giffgaff.com,UK-Snell
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc234.pub.3gppnetwork.org,UK-Snell
+IP-CIDR,87.194.0.0/16,UK-Snell,no-resolve
