@@ -13,8 +13,14 @@
 
 在 Surge 的「模块」页添加远程模块链接即可:
 
+| 模块 | 用途 |
+| --- | --- |
+| [Giffgaff UK VoWiFi](sgmodule/simhub-vowifi-giffgaff-uk-surge.sgmodule) | Wi-Fi Calling / ePDG, PLMN 23410 (Giffgaff) |
+| [EE UK VoWiFi](sgmodule/simhub-vowifi-ee-uk-surge.sgmodule) | Wi-Fi Calling / ePDG, PLMN 23430 (EE) |
+
 ```
 https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/sgmodule/simhub-vowifi-giffgaff-uk-surge.sgmodule
+https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/sgmodule/simhub-vowifi-ee-uk-surge.sgmodule
 ```
 
 ## 规则集

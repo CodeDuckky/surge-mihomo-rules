@@ -1,0 +1,9 @@
+#!name=SimHub VoWiFi - PLMN 23430
+#!desc=Surge local module for Wi-Fi Calling / ePDG. PLMN: 23430. Policy: UK-Snell. The policy must already exist in your main profile unless it is DIRECT.
+#!author=SimHub
+
+[Rule]
+DOMAIN-SUFFIX,epdg.epc.mnc030.mcc234.pub.3gppnetwork.org,UK-Snell
+DOMAIN-SUFFIX,epdg.epc.geo.mnc030.mcc234.pub.3gppnetwork.org,UK-Snell
+DOMAIN-SUFFIX,ss.epdg.epc.mnc030.mcc234.pub.3gppnetwork.org,UK-Snell
+DOMAIN-SUFFIX,ss.epdg.epc.geo.mnc030.mcc234.pub.3gppnetwork.org,UK-Snell
