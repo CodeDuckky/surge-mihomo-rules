@@ -27,6 +27,31 @@ https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/sgmodule/si
 
 规则集文件可直接用于 Surge `RULE-SET` 或 Mihomo `rule-providers`。
 
+| 规则集 | 用途 | 建议策略 |
+| --- | --- | --- |
+| [AppleIntelligence.list](ruleset/AppleIntelligence.list) | Apple Intelligence / Siri / iCloud Private Relay | 美区等支持地区的代理节点 |
+
+**Surge:**
+
+```
+RULE-SET,https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/ruleset/AppleIntelligence.list,🇺🇸 US Proxy
+```
+
+**Mihomo (Clash Meta):**
+
+```yaml
+rule-providers:
+  apple-intelligence:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/ruleset/AppleIntelligence.list"
+    path: ./ruleset/AppleIntelligence.list
+    interval: 86400
+
+rules:
+  - RULE-SET,apple-intelligence,🇺🇸 US Proxy
+```
+
 ## 贡献
 
 欢迎通过 Pull Request 提交新的 sgmodule 或 ruleset。
