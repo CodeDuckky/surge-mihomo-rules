@@ -1,0 +1,9 @@
+#!name=Surge MITM CA Diagnostic
+#!desc=临时证书对照测试。Safari 分别打开 https://example.com/surge-mitm-check 和 https://gsa.apple.com/surge-mitm-check。成功显示 SURGE MITM OK。需要 MITM、Rewrite 开启及可信 CA；测试后停用。无需 JS，不读取或修改登录请求。
+
+[MITM]
+hostname = %INSERT% example.com, gsa.apple.com
+
+[Map Local]
+^https://example\.com/surge-mitm-check(?:\?.*)?$ data-type=text data="SURGE MITM OK - example.com" status-code=200 header="Content-Type:text/plain; charset=utf-8|Cache-Control:no-store"
+^https://gsa\.apple\.com/surge-mitm-check(?:\?.*)?$ data-type=text data="SURGE MITM OK - gsa.apple.com" status-code=200 header="Content-Type:text/plain; charset=utf-8|Cache-Control:no-store"
