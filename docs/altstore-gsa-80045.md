@@ -1,5 +1,17 @@
 # AltStore / AltServer -80045 Surge 实验模块
 
+## 当前状态：iOS TLS 阶段阻断
+
+2026-10-14 的设备对照测试中，已完全信任 Surge CA，普通域名的本地 HTTPS mock 成功，但 `gsa.apple.com` 的相同测试被 Safari 拒绝，AltStore 也报服务器证书无效。**此模块未能解决这台 iPhone 的登录/刷新，应停用本模块及诊断模块。**
+
+Apple 官方要求其服务关闭 HTTPS Interception；公开的 Apple 证书规则也对 `gsa.apple.com` / `gsas.apple.com` 配置 `GS` 策略，要求 Apple 根证书及专用证书标记。结合对照结果，域名级证书固定策略是当前阻断的重要证据。没有取得该 iPhone 的 trustd 日志，不能仅凭对照测试排除所有叶证书问题。
+
+普通根 CA 完全信任不等于满足专用域名校验。TLS 未通过时，请求/响应重写脚本无法执行；`skip-server-cert-verify` 只影响 Surge 对上游的验证，不能修改 iPhone 对 Surge 证书的校验。真正的认证兼容性修补应在客户端生成请求时完成，避免依赖 GSA MITM。
+
+参考：[Apple 企业网络要求](https://support.apple.com/en-us/101555)、[Apple GS 证书固定规则](https://github.com/apple-oss-distributions/security_certificates/blob/main/Pinning/CertificatePinning.plist)、[trustd 按域名匹配固定规则的实现](https://github.com/apple-oss-distributions/Security/blob/main/trust/trustd/SecPinningDb.m)。
+
+以下安装及实现说明保留用于研究，不代表已验证可用。
+
 这是供 Surge iOS / Mac 测试的实验性模块。已做离线测试和 Mac Surge 原生引擎模拟测试，尚未通过真实 Apple 账号验证，不能保证恢复 AltStore 内刷新。
 
 ## 导入

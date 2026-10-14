@@ -1,5 +1,5 @@
-#!name=AltStore GSA -80045 Experimental
-#!desc=实验性 Android 客户端标识及受信任设备 2FA 修补。脚本由本仓库自动下载。需手动开启 MITM、信任 CA。首次只测试一个账号和一次登录。仅作用于经 Surge 的 gsa.apple.com 流量。
+#!name=AltStore GSA -80045 Experimental - TLS Blocked
+#!desc=已观察到 iOS GSA 域名 TLS 校验阻断：完全信任 CA 后仍可能拒绝 MITM，无法进入重写。该模块不是已验证可用的 iOS 修复，请停用；详见仓库 docs/altstore-gsa-80045.md。保留代码仅供研究。
 
 # Remote script is hosted in this repository and downloaded by Surge.
 # Uses the JSC scripting engine; no external JavaScript libraries.

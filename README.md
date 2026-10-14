@@ -19,7 +19,7 @@
 | --- | --- |
 | [Giffgaff UK VoWiFi](sgmodule/simhub-vowifi-giffgaff-uk-surge.sgmodule) | Wi-Fi Calling / ePDG, PLMN 23410 (Giffgaff) |
 | [EE UK VoWiFi](sgmodule/simhub-vowifi-ee-uk-surge.sgmodule) | Wi-Fi Calling / ePDG, PLMN 23430 (EE) |
-| [AltStore GSA -80045（实验）](sgmodule/altstore-gsa-80045.sgmodule) | Apple 认证客户端标识与受信任设备二次验证修补；[使用说明](docs/altstore-gsa-80045.md) |
+| [AltStore GSA -80045（实验，TLS 阻断）](sgmodule/altstore-gsa-80045.sgmodule) | iOS 实测被 GSA 证书校验阻断，建议停用；[状态及实现说明](docs/altstore-gsa-80045.md) |
 | [MITM CA 对照诊断](sgmodule/mitm-ca-diagnostic.sgmodule) | 对比普通域名与 Apple GSA 的证书校验；[测试说明](docs/mitm-ca-diagnostic.md) |
 
 ```
