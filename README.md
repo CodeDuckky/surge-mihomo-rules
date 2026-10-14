@@ -6,6 +6,8 @@
 
 - `sgmodule/` – Surge 模块
 - `ruleset/` – Surge / Mihomo 规则集
+- `scripts/` – Surge 模块使用的 JavaScript 脚本
+- `docs/` – 模块使用说明
 
 ## 使用方式
 
@@ -17,10 +19,12 @@
 | --- | --- |
 | [Giffgaff UK VoWiFi](sgmodule/simhub-vowifi-giffgaff-uk-surge.sgmodule) | Wi-Fi Calling / ePDG, PLMN 23410 (Giffgaff) |
 | [EE UK VoWiFi](sgmodule/simhub-vowifi-ee-uk-surge.sgmodule) | Wi-Fi Calling / ePDG, PLMN 23430 (EE) |
+| [AltStore GSA -80045（实验）](sgmodule/altstore-gsa-80045.sgmodule) | Apple 认证客户端标识与受信任设备二次验证修补；[使用说明](docs/altstore-gsa-80045.md) |
 
 ```
 https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/sgmodule/simhub-vowifi-giffgaff-uk-surge.sgmodule
 https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/sgmodule/simhub-vowifi-ee-uk-surge.sgmodule
+https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/sgmodule/altstore-gsa-80045.sgmodule
 ```
 
 ## 规则集

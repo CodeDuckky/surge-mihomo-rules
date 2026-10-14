@@ -1,0 +1,13 @@
+#!name=AltStore GSA -80045 Experimental
+#!desc=实验性 Android 客户端标识及受信任设备 2FA 修补。脚本由本仓库自动下载。需手动开启 MITM、信任 CA。首次只测试一个账号和一次登录。仅作用于经 Surge 的 gsa.apple.com 流量。
+
+# Remote script is hosted in this repository and downloaded by Surge.
+# Uses the JSC scripting engine; no external JavaScript libraries.
+
+[MITM]
+hostname = %INSERT% gsa.apple.com
+
+[Script]
+GSA80045-Login = type=http-request,pattern=^https://gsa\.apple\.com/grandslam/GsService2/?(?:\?.*)?$,script-path=https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/scripts/altstore-gsa-fix.js,requires-body=true,max-size=65536,full-header-mode=true,engine=jsc,timeout=10
+GSA80045-Verification = type=http-request,pattern=^https://gsa\.apple\.com/(?:auth/verify/trusteddevice/?|grandslam/GsService2/validate/?)(?:\?.*)?$,script-path=https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/scripts/altstore-gsa-fix.js,full-header-mode=true,engine=jsc,timeout=10
+GSA80045-Response = type=http-response,pattern=^https://gsa\.apple\.com/grandslam/GsService2/?(?:\?.*)?$,script-path=https://raw.githubusercontent.com/CodeDuckky/surge-mihomo-rules/main/scripts/altstore-gsa-fix.js,requires-body=true,max-size=262144,full-header-mode=true,engine=jsc,timeout=10
